@@ -32,9 +32,9 @@ class Person:
         self._password = password
 
 class Employer(Person):
-    def __init__(self, user, password, full_name, age, my_posts):
+    def __init__(self, user, password, full_name, age):
         super().__init__(user, password, full_name, age)
-        self._my_posts = my_posts
+        self._my_posts = None
 
     def __repr__(self):
         return f'Employer({"Name: "} {self._full_name} {" Age: "} {self._age})'
@@ -48,10 +48,10 @@ class Employer(Person):
         self._my_posts = my_posts
 
 class Candidate(Person):
-    def __init__(self, user, password, full_name, age, resume, my_sub):
+    def __init__(self, user, password, full_name, age):
         super().__init__(user, password, full_name, age)
-        self._resume = resume
-        self._my_sub = my_sub
+        self._resume = None
+        self._my_sub = None
 
     def __repr__(self):
         return f'Candidate({"Name: "} {self._full_name} {" Age: "} {self._age})'
