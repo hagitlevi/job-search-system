@@ -32,12 +32,12 @@ def sign_up():
         try:
             username = input('Username: ')
             if username in dict_:
-                print('try to creat a username that does not exist')
+                raise KeyError('try to creat a username that does not exist')
             else:
                 password = input('Password: ')
                 break
-        except ValueError:
-            print('Try again')
+        except KeyError as e:
+            print(f'{e}, Try again')
     while True:
         try:
             choice = int(input('Press 1 to Employer profile and 2 to Candidate profile: '))
@@ -51,9 +51,10 @@ def sign_up():
                 break
         except ValueError:
             print('Choose again')
-
+    if choice == 1:
+        return 'Employer'
     open_file_to_write(dict_)
-    return True
+    return 'Candidate'
 
 def log_in():
     while True:
@@ -65,6 +66,6 @@ def log_in():
             if password != user.password:
                 print('Wrong password!')
             else:
-                return True
+                return type(dict_[username])
         else:
             print('Wrong username! Try again')
