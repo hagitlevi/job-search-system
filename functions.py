@@ -24,7 +24,7 @@ def open_file_to_read():
         print(f'Error with opening the file {e}')
     return dictionary
 
-def sign_out():
+def sign_up():
     dict_ = open_file_to_read()
     full_name = input('Enter your full name: ')
     age = int(input('Enter your age: '))
