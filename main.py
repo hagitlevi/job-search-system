@@ -16,7 +16,7 @@ def entrance():
                 return 'Employer'
 
         elif choice == 2:
-            typ_ = functions.sign_out()
+            typ_ = functions.sign_up()
             print('sign out succeeded')
             return typ_
         print(bcolors.FAIL + 'Invalid input, Try again' + bcolors.ENDC)
@@ -24,4 +24,5 @@ def entrance():
 #The system output:
 print(bcolors.BLUEBG + 'Welcome To Search Job System' + bcolors.ENDC)
 typ = entrance()
+
 
