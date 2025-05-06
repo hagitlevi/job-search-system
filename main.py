@@ -8,16 +8,19 @@ def entrance():
     """
     while True:
         choice = int(input(bcolors.OKBLUE + 'choose an option: \n1. Log in \n2. Sign up\n'))
+        x, username = functions.log_in()
         if choice == 1:
-            if functions.log_in() is Candidate:
-                print('log in succeeded')
+            if x is Candidate:
+                print('Welcome ', username)
                 return 'Candidate'
             else:
+                print('Welcome ', username)
                 return 'Employer'
+
 
         elif choice == 2:
             typ_ = functions.sign_up()
-            print('sign op succeeded')
+            print('sign up succeeded')
             return typ_
         print(bcolors.FAIL + 'Invalid input, Try again' + bcolors.ENDC)
 
